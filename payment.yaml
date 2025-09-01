@@ -4,11 +4,12 @@
   tasks:
   - name: installing packages
     ansible.builtin.package:
-      name:
-        - python3
-        - gcc
-        - python3-devel
+      name: {{ item }}
       state: present 
+    loop: 
+    - python3
+    - gcc
+    - python3-devel
   
   - name: create app directory 
     ansible.builtin.file:
