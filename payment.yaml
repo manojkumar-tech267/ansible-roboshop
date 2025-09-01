@@ -4,8 +4,8 @@
   tasks:
   - name: installing packages
     ansible.builtin.package:
-      name: {{ item }}
-      state: present 
+      name: "{{ item }}"
+      state: installed
     loop: 
     - python3
     - gcc
