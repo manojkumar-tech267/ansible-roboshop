@@ -68,6 +68,8 @@
 
 # This task is named "import data" and its job is to import MySQL data (from .sql files) into a database.
 # This task connects to a MySQL server and imports three SQL files into the database named all.
+# It logs in to the MySQL server at mysql.daws84s.site using the root user and password RoboShop@1.
+# The state: import tells it to import data.
   - name: import data
     tags:
     - import
