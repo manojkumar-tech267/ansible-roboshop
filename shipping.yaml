@@ -10,7 +10,7 @@
   - name: installing PyMySQL
     ansible.builtin.pip:
       name: PyMySQL
-      state: installed
+      executable: pip3.9
   
   - name: create app directory 
     ansible.builtin.file:
