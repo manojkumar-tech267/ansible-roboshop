@@ -4,8 +4,11 @@
   tasks:
   - name: install maven 
     ansible.builtin.package:
-      name: maven 
+      name: "{{ item }}"
       state: present 
+    loop:
+    - mysql 
+    - maven 
   
   - name: installing PyMySQL
     ansible.builtin.pip:
