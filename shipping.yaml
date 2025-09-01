@@ -7,6 +7,11 @@
       name: maven 
       state: present 
   
+  - name: installing PyMySQL
+    ansible.builtin.pip:
+      name: PyMySQL
+      state: installed
+  
   - name: create app directory 
     ansible.builtin.file:
       path: /app 
