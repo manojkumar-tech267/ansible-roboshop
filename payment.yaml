@@ -21,12 +21,12 @@
       name: roboshop 
       shell: /sbin/nologin 
       system: yes 
-      home: /app 
+      home: /app
   
   - name: download payment code 
     ansible.builtin.get_url:
       url: https://roboshop-artifacts.s3.amazonaws.com/payment-v3.zip
-      dest: /app 
+      dest: /tmp/payment.zip
   
   - name: extracting payment code 
     ansible.builtin.unarchive:
@@ -54,7 +54,7 @@
     ansible.builtin.service:
       name: payment 
       state: started 
-      enabled: yes 
+      enabled: yes
   
   
   
